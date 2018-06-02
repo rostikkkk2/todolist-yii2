@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  margin-top: 50px;
+  margin-bottom: 90px;
+}
+
+.header{
+  background-color: rgb(64, 77, 238);
+  height: 50px;
+  width: 100%;
+  padding-top: 6px;
+}
+
+div.header a {
+  color: rgb(78, 82, 77);
+  font-size: 23px;
+  margin: 12px;
+}
+
+.footer {
+  background-color: rgb(33, 5, 101);
+  height: 100px;
+  width: 100%;
+
+}
