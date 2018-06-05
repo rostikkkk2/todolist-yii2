@@ -6,5 +6,4 @@ return [
     'username' => 'denis',
     'password' => 'denis',
     'charset' => 'utf8',
-
 ];

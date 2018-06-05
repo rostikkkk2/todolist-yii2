@@ -1,29 +1,21 @@
-*{
-  margin: 0;
-  padding: 0;
-}
+h1 {
+  font-size: 2px; }
 
-.content{
-  margin-top: 50px;
-  margin-bottom: 90px;
-}
-
-.header{
-  background-color: rgb(64, 77, 238);
-  height: 50px;
+.header {
+  padding-top: 8px;
+  height: 55px;
   width: 100%;
-  padding-top: 6px;
-}
+  background-color: blue; }
+  .header a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 40px; }
 
-div.header a {
-  color: rgb(78, 82, 77);
-  font-size: 23px;
-  margin: 12px;
-}
+main {
+  min-height: 495px; }
 
 .footer {
-  background-color: rgb(33, 5, 101);
-  height: 100px;
+  height: 80px;
   width: 100%;
-
-}
+  background-color: #0a1c93; }

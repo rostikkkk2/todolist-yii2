@@ -1,0 +1,26 @@
+h1{
+  font-size: 2px;
+}
+
+.header{
+  padding-top: 8px;
+  height: 55px;
+  width: 100%;
+  background-color: blue;
+  a{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 40px;
+  }
+}
+
+main{
+  min-height: 495px;
+}
+
+.footer{
+  height: 80px;
+  width: 100%;
+  background-color: rgb(10, 28, 147);
+}

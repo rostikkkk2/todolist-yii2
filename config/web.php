@@ -13,9 +13,17 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    // 'modules' => [
+    //   'admin' => [
+    //       'class' => 'app\modules\admin\Module',
+    //   ],
     'components' => [
+      'authManager' => [
+             'class' => 'yii\rbac\DbManager',
+         ],
         'request' => [
-            'cookieValidationKey' => '94m4LcCBmt7g35LYik_TegAUoTTeU54E',
+          'baseUrl' => '',
+          'cookieValidationKey' => '94m4LcCBmt7g35LYik_TegAUoTTeU54E',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -23,15 +31,13 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['user/enter']
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
         'log' => [
@@ -49,7 +55,11 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-              '' => 'user/enter',
+              '' => '/user/enter',
+              '/user/new' => '/user/new',
+              '<controller:w+>/<id:d+>' => '<controller>/view',
+              '<controller:w+>/<action:w+>/<id:d+>' => '<controller>/<action>',
+              '<controller:w+>/<action:w+>' => '<controller>/<action>',
             ],
         ],
 
