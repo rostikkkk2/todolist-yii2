@@ -1,3 +1,10 @@
+
+@import '_helpers';
+@import '_todolist';
+
+body{
+  background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed;//убрать
+}
 h1{
   font-size: 2px;
 }
@@ -19,8 +26,20 @@ main{
   min-height: 495px;
 }
 
-.footer{
-  height: 80px;
-  width: 100%;
-  background-color: rgb(10, 28, 147);
+.btn-add-todo{
+  background-color: #3d3dea;
+  font-weight: bold;
+  color: white;
+  border-color: #3d3dea;
+  display: block;
+  margin: auto;
+  margin-top: 80px;
+  height: 35px;
+  width: 152px;
+}
+
+.icon-btn-addtodo{
+  color: #1f2b86;
+  font-size: 17px;
+  margin-right: 7px;
 }

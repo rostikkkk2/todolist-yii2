@@ -24,11 +24,27 @@ class UserController extends Controller {
     $model = new RegistrationForm();
     $model -> load(Yii::$app -> request -> post());
     if ($model -> registrate()) {
-      Yii::$app -> session -> setFlash('success', 'вы успешно зареганы');
+      Yii::$app -> session -> setFlash('success', 'you are successfuly registrated');
       return $this -> goHome();
     }
+  }
 
+  public function actionLogout(){
+    Yii::$app -> user -> logout();
+    return $this -> goHome();
+  }
 
+  public function actionSignin(){
+    $model = new LoginForm();
+    $model -> load(Yii::$app -> request -> post());
+
+    if ($model -> login()) {
+      return $this -> redirect(['todolist/index']);
+    }else {
+      Yii::$app -> session -> setFlash('error', 'your email or password is wrong');
+      return $this -> goHome();
+
+    }
   }
 
   }

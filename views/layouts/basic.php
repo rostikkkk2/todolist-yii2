@@ -51,20 +51,12 @@ AppAsset::register($this);
         </button>
       </div>
     <?php endif; ?>
-    
+
 
         <?= $content ?>
       </div>
     </main>
-    <footer>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12 footer">
-
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer></footer>
     <?php $this->endBody() ?>
   </body>
   <?php $this->endPage(); ?>

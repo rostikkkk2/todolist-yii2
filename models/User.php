@@ -1,6 +1,6 @@
 <?php
 namespace app\models;
-
+use app\models\Todolist;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use Yii;
@@ -25,9 +25,12 @@ class User extends ActiveRecord implements IdentityInterface {
     public function getId() {
         return $this -> id;
     }
-    
+
     public function getAuthKey() {
         return $this->authKey;
+    }
+    public function getTodolists(){
+      return $this -> hasMany(Todolist::className(), ['user_id' => 'id']);
     }
     public function validateAuthKey($authKey) {
         return $this->authKey === $authKey;
