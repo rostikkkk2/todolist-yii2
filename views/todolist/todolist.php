@@ -13,13 +13,17 @@
             <div class="col-xs-12">
               <div class="title">
                 <div class="row">
-                  <div class="col-xs-1"><img src='/web/images/nodelist.png'></div>
+                  <div class="col-xs-1"><img class="img-nodelist" src='/web/images/nodelist.png'></div>
                   <div class="col-xs-8 mt-9">
                     <span><?= $todolist -> title ?></span>
                   </div>
                   <div class="col-xs-1"></div>
-                  <div class="col-xs-1"></div>
-                  <div class="col-xs-1"></div>
+                  <div class="col-xs-1 icon-edit">
+                    <a href="/todolist/edit"><img class="mb-6" src="/web/images/icon-edit.png"></a>
+                  </div>
+                  <div class="col-xs-1 icon-drop border-l">
+                    <a href="/todolist/delete/<?= $todolist -> id ?>"><img class="mb-6" src="/web/images/icon-drop.png"></a>
+                  </div>
                 </div>
 
               </div>

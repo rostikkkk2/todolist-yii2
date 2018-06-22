@@ -1,6 +1,8 @@
 # phpstorm project files
 .idea
 
+node_modules
+
 # netbeans project files
 nbproject
 
@@ -31,3 +33,5 @@ tests/_support/_generated
 
 #vagrant folder
 /.vagrant
+
+/.gitignore

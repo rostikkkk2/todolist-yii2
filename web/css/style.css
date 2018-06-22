@@ -4,6 +4,9 @@
 .mt-9 {
   margin-top: 9px; }
 
+.mb-6 {
+  margin-bottom: 6px; }
+
 .all-todolist {
   background-color: #cdcdf9;
   width: 655px;
@@ -18,7 +21,7 @@
   background: linear-gradient(to bottom, #5681b6 0%, #103a7d 100%);
   border: 1px solid #315589;
   border-radius: 2px 2px 0 0; }
-  .title img {
+  .title .img-nodelist {
     margin: 8px 6px 0 11px;
     color: #484848; }
   .title span {
@@ -59,6 +62,17 @@
   background-color: white;
   border-radius: 0 0 16px 16px; }
 
+.icon-edit {
+  text-align: right;
+  margin-top: 11px; }
+
+.icon-drop {
+  margin-top: 11px; }
+
+.border-l {
+  border-left: 1px solid #989393;
+  height: 16px; }
+
 body {
   background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed; }
 
@@ -94,3 +108,8 @@ main {
   color: #1f2b86;
   font-size: 17px;
   margin-right: 7px; }
+
+.url-error {
+  margin-top: 40px;
+  font-size: 45px;
+  color: red; }

@@ -10,7 +10,7 @@
 
 
 .title{
-  img{
+  .img-nodelist{
     margin: 8px 6px 0 11px;
     color: #484848;
   }
@@ -64,4 +64,19 @@
   min-height: 40px;
   background-color: white;
   border-radius: 0 0 16px 16px;
+}
+
+.icon-edit{
+  text-align: right;
+  margin-top: 11px;
+}
+
+.icon-drop{
+  margin-top: 11px;
+
+}
+
+.border-l{
+  border-left: 1px solid #989393;
+  height: 16px;
 }

@@ -10,6 +10,28 @@ use yii\filters\AccessControl;
 use Yii;
 
 class UserController extends Controller {
+
+  // public function behaviors(){
+  //     return [
+  //         'access' => [
+  //             'class' => AccessControl::className(),
+  //             'only' => ['logout','new','enter','create','signin'],
+  //             'rules' => [
+  //                 [
+  //                     'allow' => true,
+  //                     'actions' => ['new','enter','create','signin'],
+  //                     'roles' => ['?'],
+  //                 ],
+  //                 [
+  //                   'allow' => true,
+  //                   'actions' => ['logout'],
+  //                   'roles' => ['@'],
+  //                 ],
+  //             ],
+  //         ],
+  //       ];
+  // }
+
   public function actionEnter(){
     $model = new LoginForm();
     return $this -> render('enter', compact('model'));
@@ -43,7 +65,6 @@ class UserController extends Controller {
     }else {
       Yii::$app -> session -> setFlash('error', 'your email or password is wrong');
       return $this -> goHome();
-
     }
   }
 
