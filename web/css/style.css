@@ -7,6 +7,9 @@
 .mb-6 {
   margin-bottom: 6px; }
 
+.hidden {
+  display: none; }
+
 .all-todolist {
   background-color: #cdcdf9;
   width: 655px;
@@ -21,6 +24,9 @@
   background: linear-gradient(to bottom, #5681b6 0%, #103a7d 100%);
   border: 1px solid #315589;
   border-radius: 2px 2px 0 0; }
+  .title:hover .icons-drop-edit .icon-edit, .title:hover .icon-drop, .title:hover .border_dr_ed {
+    display: inline-block !important;
+    cursor: pointer; }
   .title .img-nodelist {
     margin: 8px 6px 0 11px;
     color: #484848; }
@@ -63,15 +69,30 @@
   border-radius: 0 0 16px 16px; }
 
 .icon-edit {
-  text-align: right;
-  margin-top: 11px; }
+  margin: 12px 7px 0px 18px;
+  display: inline-block; }
 
 .icon-drop {
-  margin-top: 11px; }
+  display: inline-block;
+  margin: 12px 0px 0px 7px; }
 
-.border-l {
-  border-left: 1px solid #989393;
-  height: 16px; }
+.border-r {
+  border-right: 1px solid #989393;
+  height: 16px;
+  display: inline-block; }
+
+.update-todo {
+  color: black; }
+
+.todolist-title-input {
+  display: inline-block; }
+
+.field-todolist-title {
+  margin-bottom: -4px;
+  display: inline-block; }
+
+.btn-send-update {
+  display: inline-block; }
 
 body {
   background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed; }

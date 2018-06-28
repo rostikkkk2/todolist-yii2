@@ -3,7 +3,7 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=todolist-yii',
-    'username' => 'denis',
-    'password' => 'denis',
+    'username' => 'root',
+    'password' => 'rostik12345',
     'charset' => 'utf8',
 ];

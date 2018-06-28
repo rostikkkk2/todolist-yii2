@@ -14,16 +14,15 @@ class LoginForm extends Model{
         return [
             [['email', 'password'], 'required'],
             ['email', 'email'],
-            // ['password', 'validatePassword'],
-            ['rememberMe', 'boolean'],
+            ['password', 'validatePassword'],
+            ['rememberMe', 'boolean']
         ];
     }
 
     public function validatePassword($attribute, $params){
       if (!$this -> hasErrors()) {
-           $user = User::findByEmail($this -> email); //user:: ????
-           var_dump(User::findByEmail($this -> email));
-           if (!$user || !$user->validatePassword($this->password)) { //?????? !$user->validatePassword($this->password)
+           $user = User::findByEmail($this -> email);
+           if (!$user || !$user->validatePassword($this->password)) {
                $this->addError($attribute, 'Неверный логин или пароль');
            }
        }
@@ -33,8 +32,6 @@ class LoginForm extends Model{
       $user = User::findByEmail($this -> email);
       if ($this->validate()) {
           return Yii::$app->user->login($user, $this->rememberMe ? 3600*24*30 : 0);
-      }else {
-        var_dump($this);
       }
     }
 

@@ -5,7 +5,6 @@ use yii\widgets\ActiveForm;
 $form = ActiveForm::begin(['action' => ['/user/create'], 'id' => 'registr', 'method' => 'post']);
 ?>
 
-<?= $form -> field($model, 'name');?>
 <?= $form -> field($model, 'email');?>
 <?= $form -> field($model, 'password');?>
 <?= $form -> field($model, 'confirm_password');?>

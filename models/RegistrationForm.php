@@ -7,7 +7,6 @@
 
   class RegistrationForm extends Model {
 
-    public $name;
     public $email;
     public $password;
     public $confirm_password;
@@ -19,7 +18,7 @@
         [['password','email','confirm_password'], 'required'],
         ['email', 'unique', 'targetClass' => '\app\models\User'],
         ['confirm_password', 'compare', 'compareAttribute' => 'password'],
-        [['name', 'auth_token'], 'safe']
+        [['auth_key'], 'safe']
       ];
     }
 
@@ -28,8 +27,7 @@
         $user = new User;
         $user -> email = $this -> email;
         $user -> password = Yii::$app -> getSecurity() -> generatePasswordHash($this -> password);
-        // $user -> auth_token = Yii::$app -> getSecurity() -> generateRandomString(32);
-        $user -> name = $this -> name;
+        $user -> auth_key = Yii::$app -> getSecurity() -> generateRandomString(32);
         $user -> save();
         return true;
       }

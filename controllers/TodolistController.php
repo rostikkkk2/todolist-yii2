@@ -25,5 +25,12 @@
      return $this -> redirect(['todolist/index']);
    }
 
+   public function actionEdit($id){
+    $todolist = Todolist::find() -> where(['id' => $id]) -> one();
+    $todolist -> title = $_POST['Todolist']['title'];
+    $todolist -> save();
+    return $this -> redirect(['todolist/index']);
+   }
+
  }
  ?>
