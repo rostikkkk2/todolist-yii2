@@ -10,6 +10,15 @@
 .hidden {
   display: none; }
 
+.mt-2 {
+  margin-top: -2px; }
+
+.m-a {
+  margin: auto; }
+
+.w-180 {
+  width: 180px; }
+
 .all-todolist {
   background-color: #cdcdf9;
   width: 655px;
@@ -85,20 +94,23 @@
   color: black; }
 
 .todolist-title-input {
-  display: inline-block; }
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 28px; }
 
 .field-todolist-title {
   margin-bottom: -4px;
   display: inline-block; }
 
-.btn-send-update {
-  display: inline-block; }
+.btn-submin-update, .btn-remove-update {
+  height: 21px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 30px; }
 
 body {
   background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed; }
-
-h1 {
-  font-size: 2px; }
 
 .header {
   padding-top: 8px;
@@ -112,25 +124,41 @@ h1 {
     margin-left: 40px; }
 
 main {
-  min-height: 495px; }
+  min-height: 790px; }
+
+.logo-todolist {
+  text-align: center; }
+  .logo-todolist h1 {
+    margin-top: 50px;
+    font-weight: bold;
+    margin-bottom: 0; }
+  .logo-todolist span {
+    font-size: 21px; }
 
 .btn-add-todo {
-  background-color: #3d3dea;
+  background: linear-gradient(to bottom, #5681b6 0%, #103a7d 100%);
+  border: 1px solid #315589;
   font-weight: bold;
   color: white;
-  border-color: #3d3dea;
   display: block;
   margin: auto;
   margin-top: 80px;
-  height: 35px;
-  width: 152px; }
-
-.icon-btn-addtodo {
-  color: #1f2b86;
-  font-size: 17px;
-  margin-right: 7px; }
+  height: 47px;
+  width: 180px; }
+  .btn-add-todo img {
+    margin: 0px 4px 0 -10px; }
+  .btn-add-todo span {
+    font-size: 17px; }
 
 .url-error {
   margin-top: 40px;
   font-size: 45px;
   color: red; }
+
+footer {
+  margin-top: 100px;
+  margin-bottom: 20px; }
+  footer a {
+    color: white; }
+    footer a:hover {
+      color: white; }

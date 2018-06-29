@@ -5,9 +5,6 @@
 body{
   background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed;//убрать
 }
-h1{
-  font-size: 2px;
-}
 
 .header{
   padding-top: 8px;
@@ -23,28 +20,52 @@ h1{
 }
 
 main{
-  min-height: 495px;
+  min-height: 790px;
+}
+
+.logo-todolist{
+  h1{
+    margin-top: 50px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  span{
+    font-size: 21px;
+  }
+  text-align: center;
 }
 
 .btn-add-todo{
-  background-color: #3d3dea;
+  img{
+    margin: 0px 4px 0 -10px;
+  }
+  span{
+    font-size: 17px;
+  }
+  background: linear-gradient(to bottom, #5681b6 0%, #103a7d 100%);
+  border: 1px solid #315589;
   font-weight: bold;
   color: white;
-  border-color: #3d3dea;
   display: block;
   margin: auto;
   margin-top: 80px;
-  height: 35px;
-  width: 152px;
+  height: 47px;
+  width: 180px;
 }
 
-.icon-btn-addtodo{
-  color: #1f2b86;
-  font-size: 17px;
-  margin-right: 7px;
-}
 .url-error{
   margin-top: 40px;
   font-size: 45px;
   color: red;
+}
+
+footer{
+  a{
+    color: white;
+    &:hover{
+      color: white;
+    }
+  }
+  margin-top: 100px;
+  margin-bottom: 20px;
 }

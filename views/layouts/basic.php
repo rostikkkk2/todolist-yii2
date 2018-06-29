@@ -34,7 +34,6 @@ AppAsset::register($this);
     <main>
       <div class="content">
 
-
         <?php if (Yii::$app -> session -> hasFlash('success')) :?>
       <div class="alert alert-success alert-dismissible mt-20" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -52,11 +51,19 @@ AppAsset::register($this);
       </div>
     <?php endif; ?>
 
-
         <?= $content ?>
+
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col-xs-12 text-center">
+            <a href="https://rubygarage.org/" target="_blank">@Ruby Garage</a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <?php $this->endBody() ?>
   </body>
   <?php $this->endPage(); ?>

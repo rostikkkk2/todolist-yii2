@@ -94,7 +94,9 @@
 
 .todolist-title-input{
   display: inline-block;
-
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 28px;
 }
 
 .field-todolist-title{
@@ -102,10 +104,9 @@
   display: inline-block;
 }
 
-.update_todo_input form{
-
-}
-
-.btn-send-update{
-  display: inline-block;
+.btn-submin-update, .btn-remove-update{
+  height: 21px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 30px;
 }

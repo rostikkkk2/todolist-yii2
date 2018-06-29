@@ -3,11 +3,27 @@
   use yii\web\Controller;
   use app\models\Todolist;
   use app\models\User;
-  use Yii\filters\AccessControl;
+  use yii\filters\AccessControl;
   use Yii;
 
 
  class TodolistController extends Controller {
+
+   public function behaviors(){
+       return [
+           'access' => [
+               'class' => AccessControl::className(),
+               'only' => ['index','create','delete','edit'],
+               'rules' => [
+                   [
+                     'allow' => true,
+                     'actions' => ['index','create','delete','edit'],
+                     'roles' => ['@'],
+                   ],
+               ],
+           ],
+         ];
+   }
 
    public function actionIndex(){
      $alltodolists = Yii::$app -> user -> identity -> todolists;

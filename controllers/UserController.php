@@ -7,30 +7,31 @@ use app\models\RegistrationForm;
 use app\models\User;
 use yii\web\Controller;
 use yii\filters\AccessControl;
+use yii\models\Todolist;
 use Yii;
 
 class UserController extends Controller {
 
-  // public function behaviors(){
-  //     return [
-  //         'access' => [
-  //             'class' => AccessControl::className(),
-  //             'only' => ['logout','new','enter','create','signin'],
-  //             'rules' => [
-  //                 [
-  //                     'allow' => true,
-  //                     'actions' => ['new','enter','create','signin'],
-  //                     'roles' => ['?'],
-  //                 ],
-  //                 [
-  //                   'allow' => true,
-  //                   'actions' => ['logout'],
-  //                   'roles' => ['@'],
-  //                 ],
-  //             ],
-  //         ],
-  //       ];
-  // }
+  public function behaviors(){
+      return [
+          'access' => [
+              'class' => AccessControl::className(),
+              'only' => ['logout','new','enter','create','signin'],
+              'rules' => [
+                  [
+                      'allow' => true,
+                      'actions' => ['new','enter','create','signin'],
+                      'roles' => ['?'],
+                  ],
+                  [
+                    'allow' => true,
+                    'actions' => ['logout'],
+                    'roles' => ['@'],
+                  ],
+              ],
+          ],
+        ];
+  }
 
   public function actionEnter(){
     $model = new LoginForm();
