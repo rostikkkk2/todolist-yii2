@@ -7,7 +7,7 @@ use app\models\RegistrationForm;
 use app\models\User;
 use yii\web\Controller;
 use yii\filters\AccessControl;
-use yii\models\Todolist;
+use yii\models\Todolists;
 use Yii;
 
 class UserController extends Controller {

@@ -1,6 +1,6 @@
 .all-todolist{
   background-color: #cdcdf9;
-  width: 655px;
+  width: 670px;
   min-height: 90px;
   margin: auto;
   border: 1px solid grey;
@@ -16,15 +16,16 @@
     }
   }
   .img-nodelist{
-    margin: 8px 6px 0 11px;
+    margin: 9px 6px 0 11px;
     color: #484848;
   }
   span{
     font-size: 18px;
     color: white;
+    font-weight: bold;
   }
   width: 100%;
-  height: 44px;
+  height: 48px;
   background: linear-gradient(to bottom, #5681b6 0%, #103a7d 100%);
   border: 1px solid #315589;
   border-radius: 2px 2px 0 0;
@@ -35,6 +36,9 @@
   img{
     color: green;
     margin: 10px 9px 0 11px;
+  }
+  .field-tasks-title{
+    margin-bottom: -15px;
   }
   .btn-add-task{
     margin: 0;
@@ -47,6 +51,7 @@
     border: 1px solid #447557;
     border-radius: 0 5px 5px 0;
     outline: none;
+    width: 110px !important;
   }
   input{
     margin-top: 7px;
@@ -59,17 +64,9 @@
   .bs{
     box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.75);
   }
-
   width: 100%;
-  height: 44px;
-  background-color: #cec7c7;;
-}
-
-.all-tasks{
-  width: 100%;
-  min-height: 40px;
-  background-color: white;
-  border-radius: 0 0 16px 16px;
+  height: 48px;
+  background-color: #cec7c7;
 }
 
 .icon-edit{
@@ -99,8 +96,8 @@
   height: 28px;
 }
 
-.field-todolist-title{
-  margin-bottom: -4px;
+.field-todolists-title{
+  margin-bottom: -3px;
   display: inline-block;
 }
 

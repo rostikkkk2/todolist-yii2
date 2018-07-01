@@ -1,9 +1,10 @@
 <?php
   namespace app\controllers;
   use yii\web\Controller;
-  use app\models\Todolist;
+  use app\models\Todolists;
   use app\models\User;
   use yii\filters\AccessControl;
+  use app\models\Tasks;
   use Yii;
 
 
@@ -26,25 +27,31 @@
    }
 
    public function actionIndex(){
+     $model = new Tasks();
      $alltodolists = Yii::$app -> user -> identity -> todolists;
-     return $this -> render('todolist', compact('alltodolists'));
+     return $this -> render('todolist', compact('alltodolists', 'model'));
    }
 
    public function actionCreate(){
-     Todolist::saveTodolist();
+     Todolists::saveTodolist();
      return $this -> redirect(['todolist/index']);
    }
 
    public function actionDelete($id){
-     $todolist = Todolist::find() -> where(['id' => $id]) -> one();
+     $todolist = Todolists::find() -> where(['id' => $id]) -> one();
      $todolist -> delete();
      return $this -> redirect(['todolist/index']);
    }
 
    public function actionEdit($id){
-    $todolist = Todolist::find() -> where(['id' => $id]) -> one();
-    $todolist -> title = $_POST['Todolist']['title'];
-    $todolist -> save();
+    $todolist = Todolists::find() -> where(['id' => $id]) -> one();
+    $todolist_title = $_POST['Todolists']['title'];
+    $todolist -> title = $todolist_title;
+    if ($todolist_title != '') {
+      $todolist -> save();
+    }else{
+      Yii::$app -> session -> setFlash('error', 'your todolist must not be empty');
+    }
     return $this -> redirect(['todolist/index']);
    }
 

@@ -1,0 +1,32 @@
+.all-tasks{
+  width: 100%;
+  min-height: 48px;
+  background-color: white;
+  // border-radius: 0 0 16px 16px;
+}
+
+
+.vert-borders-l{
+  float: left;
+  height: 48px;
+  border-left: 1px solid rgb(255, 144, 254);
+}
+
+.vert-border-r{
+  float: right;
+  height: 48px;
+  border-right: 1px solid grey;
+  display: inline-block;
+}
+
+.text-task{
+  display: inline-block;
+  color: #8a8a8a;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 12px 0px 0px 4px;
+}
+
+.btns-move-update-delete{
+
+}

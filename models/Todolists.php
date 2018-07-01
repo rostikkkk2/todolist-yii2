@@ -5,7 +5,7 @@ use yii\db\ActiveRecord;
 use app\models\User;
 use Yii;
 
-class Todolist extends ActiveRecord{
+class Todolists extends ActiveRecord{
     public static function tableName(){
         return 'todolists';
     }
@@ -34,8 +34,13 @@ class Todolist extends ActiveRecord{
         ];
     }
 
+    public function getTasks(){
+      return $this -> hasMany(Tasks::className(), ['todolist_id' => 'id']);
+    }
+
     public function getUser()
     {
-        return $this->hasOne(Users::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+
 }
