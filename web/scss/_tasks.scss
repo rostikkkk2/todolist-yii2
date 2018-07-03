@@ -3,19 +3,19 @@
   min-height: 48px;
   background-color: white;
   // border-radius: 0 0 16px 16px;
+  border-bottom: 1px solid #e6e6e6;
 }
-
 
 .vert-borders-l{
   float: left;
   height: 48px;
-  border-left: 1px solid rgb(255, 144, 254);
+  border-left: 1px solid #ffcaff;
 }
 
 .vert-border-r{
   float: right;
   height: 48px;
-  border-right: 1px solid grey;
+  border-right: 1px solid #e6e6e6;
   display: inline-block;
 }
 
@@ -27,6 +27,43 @@
   margin: 12px 0px 0px 4px;
 }
 
-.btns-move-update-delete{
+.checkbox-done{
+  input{
+    margin: 15px 0 0 15px;
+    transform: scale(1.2);
+    opacity: 0.9;
+    cursor: pointer;
+  }
+}
 
+.btns-move-update-delete{
+  div{
+    display: inline-block;
+  }
+  .move-task{
+    font-size: 15px;
+    color: #8e8d8d;
+    margin-right: 4px;
+  }
+  .task-border-r{
+    border-right: 1px solid #ccc8c8;
+    height: 13px;
+  }
+  .update-task{
+    width: 15px;
+    padding-bottom: 7px;
+    margin-left: 7px;
+    margin-right: 6px;
+  }
+  .task-border-l{
+    border-left: 1px solid #ccc8c8;
+    height: 13px;
+  }
+  .delete-task{
+    width: 15px;
+    padding-bottom: 7px;
+    margin-left: 6px;
+  }
+  margin-left: -21px;
+  padding-top: 16px;
 }

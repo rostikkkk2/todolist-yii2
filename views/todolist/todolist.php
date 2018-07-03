@@ -23,8 +23,8 @@
                   <div class="row">
                     <div class="col-xs-1"><img class="img-nodelist" src='/web/images/nodelist.png'></div>
                     <div class="col-xs-8 mt-10">
-                      <span class="update_todo_title"><?= $todolist -> title ?></span>
-                      <div class="hidden update_todo_input mt-2">
+                      <span class="update-todo-title"><?= $todolist -> title ?></span>
+                      <div class="hidden update-todo-input mt--2">
                         <?php $update_todo = ActiveForm::begin(['action' => ['/todolist/edit/' . $todolist -> id], 'method' => 'post']); ?>
                         <?= $update_todo -> field($todolist, 'title') -> textInput(['class'=> 'todolist-title-input', 'value' => $todolist -> title])->label(false); ?>
                         <?= Html::submitButton('', ['class' => 'glyphicon glyphicon-ok btn-submin-update']); ?>
@@ -35,9 +35,9 @@
                     <div class="col-xs-1"></div>
                     <div class="col-xs-2 mt-2 icons-drop-edit">
                       <div class="icon-edit hidden">
-                        <a><img class="mb-6 update_todo" src="/web/images/icon-edit.png"></a>
+                        <img class="mb-6 update-todo" src="/web/images/icon-edit.png">
                       </div>
-                      <div class="border_dr_ed hidden">
+                      <div class="border-dr-ed hidden">
                         <div class="border-r"></div>
                       </div>
                       <div class="icon-drop  hidden">
@@ -68,33 +68,44 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="all-tasks">
-                  <div class="row">
-                    <div class="col-xs-1 checkbox-done">
-                       <!-- $checkbox_task_form = ActiveForm::begin(['action' => ['/todolist/checkTaskCompleted/' . $task -> id], 'method' => 'post']); ?> -->
-                       <!-- $checkbox_task_form -> field($task, 'myAttribute') -> checkbox(); ?> -->
-                       <!-- ActiveForm::end(); ?> -->
-
-                    </div>
-                    <div class="col-xs-9 vert-borders-l pr-21">
-                      <div class="vert-borders-l ml-11"></div>
-                      <div class="text-task">
-                        <span>Do home task</span>
+            <?php foreach ($todolist -> tasks as $task): ?>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="all-tasks">
+                    <div class="row">
+                      <div class="col-xs-1 checkbox-done">
+                        <?php $checkbox_task_form = ActiveForm::begin(); ?>
+                        <?= $checkbox_task_form -> field($task, 'is_completed') -> checkBox(['label' => null, 'class' => 'checkbox_task']); ?>
+                        <?= $checkbox_task_form -> field($task, 'id') -> hiddenInput(['class' => 'hidden-input-task-id']) -> label(false); ?>
+                        <?php ActiveForm::end(); ?>
                       </div>
-                      <div class="vert-border-r"></div>
-                    </div>
-                    <div class="col-xs-2">
-                      <div class="btns-move-update-delete">
-
+                      <div class="col-xs-9 vert-borders-l pr-21">
+                        <div class="vert-borders-l ml-11"></div>
+                        <div class="text-task">
+                          <span><?= $task -> title ?></span>
+                        </div>
+                        <div class="vert-border-r"></div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="btns-move-update-delete">
+                          <div class="">
+                            <i class="move-task glyphicon glyphicon-resize-vertical"></i>
+                          </div>
+                          <div class="task-border-r"></div>
+                          <div class="">
+                            <img class="update-task" src="/web/images/task-update2.png">
+                          </div>
+                          <div class="task-border-l"></div>
+                          <div class="">
+                            <a href="/task/delete/<?= $task -> id ?>"><img class="delete-task" src="/web/images/task-delete2.png"></a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
