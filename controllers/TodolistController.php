@@ -43,7 +43,7 @@
      return $this -> redirect(['todolist/index']);
    }
 
-   public function actionEdit($id){
+   public function actionUpdate($id){
     $todolist = Todolists::find() -> where(['id' => $id]) -> one();
     $todolist_title = $_POST['Todolists']['title'];
     $todolist -> title = $todolist_title;

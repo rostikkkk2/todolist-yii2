@@ -50,6 +50,19 @@
       return $this -> redirect(['/todolist/index']);
     }
 
+    public function actionDelete($id){
+      $task = Tasks::find() -> where(['id' => $id]) -> one();
+      $task -> delete();
+      return $this -> redirect(['/todolist/index']);
+    }
+
+    public function actionUpdate($id){
+      $task = Tasks::find() -> where(['id' => $id]) -> one();
+      $task -> title = $_POST['Tasks']['title'];
+      $task -> save();
+      return $this -> redirect(['/todolist/index']);
+    }
+
   }
 
  ?>

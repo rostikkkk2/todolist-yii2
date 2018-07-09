@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $('.update-todo').click(function(){
     var this_obg = $(this).parents('.title');
     $(this_obg).find('.update-todo-title').addClass('hidden');
@@ -17,17 +18,28 @@ $(document).ready(function(){
     $(this_obg).find('.update-todo-title').removeClass('hidden');
     $(this_obg).find('.update-todo').removeClass('hidden');
     $(this_obg).find('.border-r').removeClass('hidden');
-    // $(this_obg).find('.todolist-title-input').val('');
-  })
+  });
 
   $('.checkbox_task').click(function(){
-    var this_obg = $(this).parents('.all-tasks');
+    var this_obg = $(this).parents('.all-task');
     var task_id = $(this_obg).find('.hidden-input-task-id').val();
     if (!$(this_obg).find('.checkbox_task').attr('checked')) {
       window.location.replace("http://todolist-yii2/task/check/" + task_id);
     }else {
       window.location.replace("http://todolist-yii2/task/uncheck/" + task_id);
     }
+  });
 
-  })
+  $('.update-task').click(function(){
+    var this_obg = $(this).parents('.all-task');
+    $(this_obg).find('.title-task').addClass('hidden');
+    $(this_obg).find('.update-form-task').removeClass('hidden');
+  });
+
+  $('.btn-remove-update-task').click(function(){
+    var this_obg = $(this).parents('.all-task');
+    $(this_obg).find('.update-form-task').addClass('hidden');
+    $(this_obg).find('.title-task').removeClass('hidden');
+  });
+
 })
