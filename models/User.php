@@ -1,41 +1,42 @@
 <?php
 namespace app\models;
+
 use app\models\Todolists;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use Yii;
 
 class User extends ActiveRecord implements IdentityInterface {
-    public static function tableName(){
-      return 'users';
-    }
+  public static function tableName(){
+    return 'users';
+  }
 
-    public static function findIdentity($id) {
-      return self::findOne($id);
-    }
+  public static function findIdentity($id) {
+    return self::findOne($id);
+  }
 
-    public static function findIdentityByAccessToken($token, $type = null) {
-      return true;
-    }
+  public static function findIdentityByAccessToken($token, $type = null) {
+    return true;
+  }
 
-    public static function findByEmail($email) {
-      return self::findOne(compact('email'));
-    }
+  public static function findByEmail($email) {
+    return self::findOne(compact('email'));
+  }
 
-    public function getId() {
-        return $this -> id;
-    }
+  public function getId() {
+      return $this -> id;
+  }
 
-    public function getAuthKey() {
-        return $this->auth_key;
-    }
-    public function getTodolists(){
-      return $this -> hasMany(Todolists::className(), ['user_id' => 'id']);
-    }
-    public function validateAuthKey($authKey) {
-        return $this->auth_key === $authKey;
-    }
-    public function validatePassword($password) {
-      return Yii::$app -> getSecurity() -> validatePassword($password, $this -> password);
-    }
+  public function getAuthKey() {
+      return $this -> auth_key;
+  }
+  public function getTodolists(){
+    return $this -> hasMany(Todolists::className(), ['user_id' => 'id']);
+  }
+  public function validateAuthKey($authKey) {
+      return $this -> auth_key === $authKey;
+  }
+  public function validatePassword($password) {
+    return Yii::$app -> getSecurity() -> validatePassword($password, $this -> password);
+  }
 }

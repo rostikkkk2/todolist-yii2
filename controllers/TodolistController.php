@@ -1,5 +1,6 @@
 <?php
   namespace app\controllers;
+
   use yii\web\Controller;
   use app\models\Todolists;
   use app\models\User;
@@ -7,23 +8,21 @@
   use app\models\Tasks;
   use Yii;
 
-
  class TodolistController extends Controller {
-
    public function behaviors(){
-       return [
-           'access' => [
-               'class' => AccessControl::className(),
-               'only' => ['index','create','delete','edit'],
-               'rules' => [
-                   [
-                     'allow' => true,
-                     'actions' => ['index','create','delete','edit'],
-                     'roles' => ['@'],
-                   ],
-               ],
-           ],
-         ];
+     return [
+      'access' => [
+         'class' => AccessControl::className(),
+         'only' => ['index','create','delete','edit'],
+         'rules' => [
+             [
+               'allow' => true,
+               'actions' => ['index','create','delete','edit'],
+               'roles' => ['@'],
+             ],
+         ],
+      ],
+    ];
    }
 
    public function actionIndex(){
@@ -38,19 +37,18 @@
    }
 
    public function actionDelete($id){
-     $todolist = Todolists::find() -> where(['id' => $id]) -> one();
-     $todolist -> delete();
+     $todolist = Todolists::findOne($id) -> delete();
      return $this -> redirect(['todolist/index']);
    }
 
    public function actionUpdate($id){
-    $todolist = Todolists::find() -> where(['id' => $id]) -> one();
+    $todolist = Todolists::findOne($id);
     $todolist_title = $_POST['Todolists']['title'];
     $todolist -> title = $todolist_title;
-    if ($todolist_title != '') {
-      $todolist -> save();
+    if ($todolist -> save()) {
+      Yii::$app -> session -> setFlash('success', 'your todolist successfuly updated');
     }else{
-      Yii::$app -> session -> setFlash('error', 'your todolist must not be empty');
+      Yii::$app -> session -> setFlash('error', 'your todolist must not be empty and contain less 40 letters');
     }
     return $this -> redirect(['todolist/index']);
    }

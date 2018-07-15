@@ -6,11 +6,9 @@
   use app\models\User;
 
   class RegistrationForm extends Model {
-
     public $email;
     public $password;
     public $confirm_password;
-
 
     public function rules(){
       return [
@@ -28,8 +26,7 @@
         $user -> email = $this -> email;
         $user -> password = Yii::$app -> getSecurity() -> generatePasswordHash($this -> password);
         $user -> auth_key = Yii::$app -> getSecurity() -> generateRandomString(32);
-        $user -> save();
-        return true;
+        return $user -> save();
       }
     }
   }

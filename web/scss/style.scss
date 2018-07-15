@@ -4,14 +4,14 @@
 @import '_todolist';
 
 body{
-  background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed;//убрать
+  background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed;
 }
 
 .header{
   padding-top: 8px;
   height: 55px;
   width: 100%;
-  background-color: blue;
+  background: linear-gradient(to bottom, #6f95c3 0%, #103a7d 100%);
   a{
     font-size: 20px;
     font-weight: bold;
@@ -22,6 +22,10 @@ body{
 
 main{
   min-height: 790px;
+}
+
+a:hover{
+  text-decoration: none;
 }
 
 .logo-todolist{

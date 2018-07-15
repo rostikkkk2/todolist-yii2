@@ -2,8 +2,7 @@
 
 use yii\db\Migration;
 
-class m180701_131530_add_foreign_key_to_tasks extends Migration
-{
+class m180701_131530_add_foreign_key_to_tasks extends Migration{
   public function safeUp(){
     $this -> addColumn('tasks', 'todolist_id', $this -> integer() -> notNull());
     $this -> addForeignKey(
@@ -15,7 +14,6 @@ class m180701_131530_add_foreign_key_to_tasks extends Migration
       'CASCADE',
       'CASCADE'
     );
-
   }
 
     public function safeDown(){

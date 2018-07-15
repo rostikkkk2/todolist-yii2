@@ -14,7 +14,6 @@ class m180604_201830_add_foreign_key_to_todolists extends Migration{
       'CASCADE',
       'CASCADE'
     );
-
   }
 
     public function safeDown(){

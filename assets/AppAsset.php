@@ -13,6 +13,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
       'js/todolist.js',
+      'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

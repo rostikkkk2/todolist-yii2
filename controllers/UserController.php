@@ -11,7 +11,6 @@ use yii\models\Todolists;
 use Yii;
 
 class UserController extends Controller {
-
   public function behaviors(){
       return [
           'access' => [
