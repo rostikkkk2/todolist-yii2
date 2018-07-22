@@ -1,0 +1,360 @@
+.tasks-bord-rad {
+  border-radius: 0 0 16px 16px;
+  overflow: hidden; }
+
+.all-task {
+  background-color: white;
+  width: 100%;
+  min-height: 48px;
+  border-bottom: 1px solid #e6e6e6; }
+  .all-task:hover {
+    background-color: #ffffa2; }
+    .all-task:hover .btns-move-update-delete {
+      display: inline-block !important;
+      cursor: pointer; }
+
+.deadline-over {
+  background-color: #ff7272; }
+
+.vert-borders-l {
+  text-align: right;
+  float: left;
+  min-height: 48px;
+  border-left: 1px solid #ffcaff; }
+  .vert-borders-l .text-task {
+    float: left; }
+
+.middle-row-text {
+  width: 71%; }
+
+.vert-border-r {
+  min-height: 48px;
+  border-right: 1px solid #e6e6e6;
+  display: inline-block; }
+
+.text-task {
+  display: inline-block;
+  color: #8a8a8a;
+  font-weight: bold;
+  font-size: 16px;
+  width: 67%;
+  text-align: left;
+  word-break: break-word; }
+  .text-task .title-task {
+    display: block;
+    margin: 12px 0px 0px -6px; }
+
+.deadline-text {
+  margin-top: 13px;
+  display: inline-block;
+  margin-right: 11px;
+  font-size: 13px; }
+
+.checkbox-done input {
+  margin: 15px 0 0 15px;
+  transform: scale(1.2);
+  opacity: 0.9;
+  cursor: pointer; }
+
+.btns-task {
+  width: 121px; }
+
+.btns-move-update-delete {
+  margin-left: -2px; }
+  .btns-move-update-delete div {
+    display: inline-block; }
+  .btns-move-update-delete form {
+    font-size: 0; }
+  .btns-move-update-delete .move-task-up, .btns-move-update-delete .move-task-down, .btns-move-update-delete .move-task-not-up {
+    font-size: 13px;
+    color: #8e8d8d;
+    margin-right: 4px;
+    display: block;
+    border: none;
+    background: none;
+    padding-right: 4px;
+    outline: none; }
+  .btns-move-update-delete .task-border-r {
+    border-right: 1px solid #ccc8c8;
+    height: 13px;
+    margin-bottom: 6px; }
+  .btns-move-update-delete .update-task {
+    width: 15px;
+    margin-left: 7px;
+    margin-right: 6px;
+    margin-bottom: 16px; }
+  .btns-move-update-delete .task-border-l {
+    margin-bottom: 6px;
+    border-left: 1px solid #ccc8c8;
+    height: 13px; }
+  .btns-move-update-delete .delete-task {
+    width: 15px;
+    margin-left: 6px;
+    margin-bottom: 15px; }
+
+.input-task-update {
+  margin-top: -1px;
+  display: inline-block;
+  width: 99%;
+  border: 1px solid gray;
+  border-radius: 4px; }
+
+.update-form-task {
+  margin-top: 11px; }
+  .update-form-task .field-tasks-title {
+    display: inline-block;
+    margin-bottom: 0; }
+
+.btn-update-task, .btn-remove-update-task {
+  border: 1px solid gray;
+  border-radius: 4px; }
+
+.task-done-cross {
+  text-decoration: line-through; }
+
+.update-datetime-deadline {
+  width: 110%; }
+
+.field-tasks-deadline {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 0; }
+
+.btn-update-deadline, .btn-cancel-update-deadline {
+  border: 1px solid gray;
+  border-radius: 4px; }
+
+@media (max-width: 600px) {
+  .middle-row-text {
+    width: 62%; }
+  .btns-move-update-delete {
+    margin-left: 2px; } }
+
+@media (max-width: 500px) {
+  .input-task-update {
+    width: 98%; }
+  .field-tasks-title {
+    width: 155px;
+    text-align: left; }
+  .field-tasks-deadline {
+    display: block;
+    width: 143%; } }
+
+@media (max-width: 425px) {
+  .field-tasks-title {
+    width: 100px;
+    text-align: left; }
+  .checkbox-done {
+    padding-left: 5px; }
+  .middle-row-text {
+    width: 50%;
+    margin-left: 10px; } }
+
+.fs-15 {
+  font-size: 15px; }
+
+.mt-10 {
+  margin-top: 10px; }
+
+.mb-6 {
+  margin-bottom: 6px; }
+
+.hidden {
+  display: none; }
+
+.mt--2 {
+  margin-top: -2px; }
+
+.mt-9 {
+  margin-top: 9px; }
+
+.m-a {
+  margin: auto; }
+
+.w-180 {
+  width: 180px; }
+
+.mt-2 {
+  margin-top: 2px; }
+
+.ml-11 {
+  margin-left: -11px; }
+
+.pr-30 {
+  padding-right: 30px; }
+
+.mt-7 {
+  margin-top: 7px; }
+
+.all-todolist {
+  min-height: 90px;
+  margin-top: 60px; }
+
+.title {
+  height: 48px;
+  background: linear-gradient(to bottom, #6f95c3 0%, #103a7d 100%);
+  border: 1px solid #2e548a;
+  border-radius: 2px 2px 0 0; }
+  .title:hover .icons-drop-update .icon-update, .title:hover .icon-drop, .title:hover .border-dr-ed {
+    display: inline-block !important;
+    cursor: pointer; }
+  .title .img-nodelist {
+    margin: 9px 6px 0 11px;
+    color: #484848; }
+  .title span {
+    font-size: 18px;
+    color: white;
+    font-weight: bold; }
+
+.input-task {
+  height: 48px;
+  background-color: #cec7c7; }
+  .input-task img {
+    color: green;
+    margin: 10px 9px 0 13px; }
+  .input-task .field-tasks-title {
+    width: 79%;
+    margin-bottom: -15px;
+    display: inline-block; }
+  .input-task .field-todolists-id {
+    display: inline-block; }
+  .input-task .input-group-btn {
+    display: inline-block; }
+  .input-task .btn-add-task {
+    margin-top: -3px;
+    font-size: 14px;
+    margin-left: -13px;
+    outline: none;
+    height: 28px;
+    background: linear-gradient(#91f5c0 0%, #4b9a6d 77%);
+    color: white;
+    border: 1px solid #3c6f50;
+    border-radius: 0 5px 5px 0;
+    width: 110px !important; }
+  .input-task input {
+    margin-top: 7px;
+    height: 30px;
+    margin-left: -6px;
+    outline: none;
+    border-radius: 0px; }
+  .input-task .bs {
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.75); }
+
+.icon-update {
+  margin: 12px 4px 0 0;
+  display: inline-block; }
+
+.icon-drop {
+  display: inline-block;
+  margin: 12px 0 0 4px; }
+
+.border-r {
+  border-right: 1px solid #989393;
+  height: 16px;
+  display: inline-block; }
+
+.update-todo {
+  color: black; }
+
+.todolist-title-input {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 28px; }
+
+.field-todolists-title {
+  margin-bottom: -3px;
+  display: inline-block; }
+
+.btn-submin-update, .btn-remove-update {
+  height: 21px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 30px; }
+
+@media (max-width: 600px) {
+  .input-task .field-tasks-title {
+    width: 70%; } }
+
+@media (max-width: 530px) {
+  .input-task .field-tasks-title {
+    width: 60%;
+    margin-left: 17px; } }
+
+@media (max-width: 490px) {
+  .icon-update {
+    margin-left: -25px; }
+  .todolist-title-input {
+    margin-left: 15px;
+    width: 120px; }
+  .update-todo-title {
+    margin-left: 15px; } }
+
+@media (max-width: 370px) {
+  .title .img-nodelist {
+    margin-left: 4px; }
+  .icon-update {
+    margin-left: -28px; }
+  .bloc-title-todo {
+    margin-right: -10px; }
+  .input-task .field-tasks-title {
+    width: 50%; }
+  .left-xs-med-img {
+    margin-left: -8px; } }
+
+body {
+  background: linear-gradient(#ffffff 0%, #d88200 100%) no-repeat fixed; }
+
+.header {
+  padding-top: 8px;
+  height: 55px;
+  width: 100%;
+  background: linear-gradient(to bottom, #6f95c3 0%, #103a7d 100%); }
+  .header a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 40px; }
+
+main {
+  min-height: 790px; }
+
+a:hover {
+  text-decoration: none; }
+
+.logo-todolist {
+  text-align: center; }
+  .logo-todolist h1 {
+    margin-top: 50px;
+    font-weight: bold;
+    margin-bottom: 0; }
+  .logo-todolist span {
+    font-size: 21px; }
+
+.btn-add-todo {
+  background: linear-gradient(to bottom, #6f95c3 0%, #103a7d 100%);
+  border: 1px solid #2e548a;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 80px;
+  height: 47px;
+  width: 180px; }
+  .btn-add-todo img {
+    margin: 0px 4px 0 -10px; }
+  .btn-add-todo span {
+    font-size: 17px; }
+
+.url-error {
+  margin-top: 40px;
+  font-size: 45px;
+  color: red; }
+
+footer {
+  margin-top: 100px;
+  margin-bottom: 20px; }
+  footer a {
+    color: white; }
+    footer a:hover {
+      color: white; }

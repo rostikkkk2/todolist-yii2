@@ -4,6 +4,8 @@
 # node_modules
 /node_modules
 
+/web/css/.style.css
+
 # netbeans project files
 nbproject
 

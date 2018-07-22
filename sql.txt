@@ -1,0 +1,8 @@
+SQL task:
+
+Given tables:
+
+1. tasks(id, name, status, project_id)
+2. projects(id, name)
+
+- get all statuses, not repeating, alphabetically ordered

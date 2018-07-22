@@ -29,7 +29,7 @@ class Todolists extends ActiveRecord{
     }
 
     public function getTasks(){
-      return $this -> hasMany(Tasks::className(), ['todolist_id' => 'id']);
+      return $this -> hasMany(Tasks::className(), ['todolist_id' => 'id']) -> orderBy('position');
     }
 
     public function getUser(){

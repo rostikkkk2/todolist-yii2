@@ -7,17 +7,17 @@ use app\models\Tasks;
 <div class="tasks-bord-rad">
   <?php foreach ($todolist -> tasks as $task): ?>
     <div class="row">
-      <div class="col-xs-12">
-        <div class="all-task">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <?php $deadline = $task -> deadline <= Yii::$app -> formatter -> asDate('now', 'yyyy-MM-dd H:i:s') && $task -> is_completed == 0 ? "deadline-over" : ""?>
+        <div class="all-task <?= $deadline ?>">
           <div class="row">
-            <div class="col-xs-1 checkbox-done">
+            <div class="col-md-1 col-sm-1 col-xs-1 checkbox-done">
               <?php $checkbox_task_form = ActiveForm::begin(); ?>
               <?= $checkbox_task_form -> field($task, 'is_completed') -> checkBox(['label' => null, 'class' => 'checkbox_task']); ?>
               <?= $checkbox_task_form -> field($task, 'id') -> hiddenInput(['class' => 'hidden-input-task-id']) -> label(false); ?>
               <?php ActiveForm::end(); ?>
             </div>
-            <div class="col-xs-9 vert-borders-l pr-21">
-              <div class="vert-borders-l ml-11"></div>
+            <div class="col-md-9 col-sm-9 col-xs-9 middle-row-text vert-borders-l vert-border-r">
               <div class="text-task">
                 <?php if ($task -> is_completed == false): ?>
                   <span class="title-task"><?= $task -> title ?></span>
@@ -31,13 +31,21 @@ use app\models\Tasks;
                   <button class="glyphicon glyphicon-remove btn-remove-update-task" type="button"></button>
                   <?php ActiveForm::end(); ?>
                 </div>
+                <div class="update-datetime-deadline hidden">
+                  <?php $form_deadline = ActiveForm::begin(['action' => '/task/deadline/' . $task -> id, 'enableClientValidation' => false, 'method' => 'post']); ?>
+                  <?= $form_deadline -> field($model, 'deadline') -> textInput(['type' => "datetime-local"]) -> label(false); ?>
+                  <?= Html::submitButton('', ['class' => 'glyphicon glyphicon-ok btn-update-deadline']);?>
+                  <button class="glyphicon glyphicon-remove btn-cancel-update-deadline" type="button"></button>
+                  <?php $form_deadline = ActiveForm::end(); ?>
+                </div>
               </div>
-              <div class="vert-border-r"></div>
+              <span class="deadline-text"><?= $task -> deadline ?></span>
             </div>
-            <div class="col-xs-2">
+            <div class="col-md-2 col-sm-2 col-xs-2 btns-task">
               <div class="btns-move-update-delete hidden">
-                <div class="">
-                  <i class="move-task glyphicon glyphicon-resize-vertical"></i>
+                <div class="mt-9">
+                  <i class="move-task-up glyphicon glyphicon-triangle-top"></i>
+                  <i class="move-task-down glyphicon glyphicon-triangle-bottom"></i>
                 </div>
                 <div class="task-border-r"></div>
                 <div class="">
