@@ -13,11 +13,11 @@
      return [
       'access' => [
          'class' => AccessControl::className(),
-         'only' => ['index','create','delete','edit'],
+         'only' => ['index','create','delete','update'],
          'rules' => [
              [
                'allow' => true,
-               'actions' => ['index','create','delete','edit'],
+               'actions' => ['index','create','delete','update'],
                'roles' => ['@'],
              ],
          ],
@@ -37,7 +37,7 @@
    }
 
    public function actionDelete($id){
-     $todolist = Todolists::findOne($id) -> delete();
+     Todolists::findOne($id) -> delete();
      return $this -> redirect(['todolist/index']);
    }
 

@@ -3,6 +3,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use app\models\User;
 use app\models\Tasks;
+use kartik\datetime\DateTimePicker;
 ?>
 <div class="tasks-bord-rad">
   <?php foreach ($todolist -> tasks as $task): ?>
@@ -32,11 +33,11 @@ use app\models\Tasks;
                   <?php ActiveForm::end(); ?>
                 </div>
                 <div class="update-datetime-deadline hidden">
-                  <?php $form_deadline = ActiveForm::begin(['action' => '/task/deadline/' . $task -> id, 'enableClientValidation' => false, 'method' => 'post']); ?>
-                  <?= $form_deadline -> field($model, 'deadline') -> textInput(['type' => "datetime-local"]) -> label(false); ?>
+                  <?php $update_deadline = ActiveForm::begin(['action' => ['/task/deadline/' . $task -> id], 'method' => 'post', 'id' => $task -> id . " update_deadline", 'options' => ['class' => 'form-update-deadline']]);?>
+                  <?=$update_deadline -> field($model, "[$task->id]deadline") -> widget(DateTimePicker::classname(), ['readonly'=> true])->label(false); ?>
                   <?= Html::submitButton('', ['class' => 'glyphicon glyphicon-ok btn-update-deadline']);?>
                   <button class="glyphicon glyphicon-remove btn-cancel-update-deadline" type="button"></button>
-                  <?php $form_deadline = ActiveForm::end(); ?>
+                  <?php $update_deadline = ActiveForm::end(); ?>
                 </div>
               </div>
               <span class="deadline-text"><?= $task -> deadline ?></span>

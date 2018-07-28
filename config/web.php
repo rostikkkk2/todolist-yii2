@@ -53,8 +53,19 @@ $config = [
           'rules' => [
             '' => '/todolist/index',
             '<controller:w+>/<id:d+>' => '<controller>/view',
-            '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             '<controller:w+>/<action:w+>' => '<controller>/<action>',
+            '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
+
+            // '<controller:\w+>s' => '<controller>/index',
+            // '<controller>/edit/<id:\d+>' => '<controller>/edit',
+            // '<controller>/check/<id:\d+>' => '<controller>/check',
+            // 'POST <controller>' => '<controller>/create',
+            // 'POST <controller>/update/<id:\d+>' => '<controller>/update',
+            // 'POST <controller>/deadline/<id:\d+>' => '<controller>/deadline',
+            // 'POST <controller>/moveup/<id:\d+>' => '<controller>/moveup',
+            // 'POST <controller>/movedown/<id:\d+>' => '<controller>/movedown',
+            // 'POST <controller>/delete/<id:\d+>' => '<controller>/delete'
+
           ],
       ],
 

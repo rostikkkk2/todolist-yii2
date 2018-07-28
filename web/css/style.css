@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .tasks-bord-rad {
   border-radius: 0 0 16px 16px;
   overflow: hidden; }
@@ -92,12 +93,21 @@
     margin-left: 6px;
     margin-bottom: 15px; }
 
+.input-group-addon[title="Очистить поле"] {
+  display: none; }
+
 .input-task-update {
   margin-top: -1px;
   display: inline-block;
   width: 99%;
   border: 1px solid gray;
   border-radius: 4px; }
+
+.form-update-deadline .form-group {
+  display: inline-block;
+  width: 74%;
+  margin-top: 7px;
+  margin-bottom: -21px; }
 
 .update-form-task {
   margin-top: 11px; }
@@ -128,7 +138,9 @@
   .middle-row-text {
     width: 62%; }
   .btns-move-update-delete {
-    margin-left: 2px; } }
+    margin-left: 2px; }
+  .form-update-deadline .form-group {
+    width: 65%; } }
 
 @media (max-width: 500px) {
   .input-task-update {
@@ -138,7 +150,10 @@
     text-align: left; }
   .field-tasks-deadline {
     display: block;
-    width: 143%; } }
+    width: 143%; }
+  .form-update-deadline .form-group {
+    width: 100%;
+    margin-bottom: 0; } }
 
 @media (max-width: 425px) {
   .field-tasks-title {
@@ -148,7 +163,10 @@
     padding-left: 5px; }
   .middle-row-text {
     width: 50%;
-    margin-left: 10px; } }
+    margin-left: 10px; }
+  .form-update-deadline .form-group {
+    width: 113%;
+    margin-bottom: 0; } }
 
 .fs-15 {
   font-size: 15px; }

@@ -12,11 +12,11 @@
       return [
         'access' => [
             'class' => AccessControl::className(),
-            'only' => ['create','check','uncheck','movetask','deadline'],
+            'only' => ['create','check','uncheck','deadline','moveup','movedown'],
             'rules' => [
                 [
                   'allow' => true,
-                  'actions' => ['create','check','uncheck','movetask','deadline'],
+                  'actions' => ['create','check','uncheck','deadline','moveup','movedown'],
                   'roles' => ['@'],
                 ],
             ],
@@ -90,7 +90,7 @@
 
     public function actionDeadline($id){
       $task_id = Tasks::findOne($id);
-      $user_new_date = $_POST['Tasks']['deadline'];
+      $user_new_date = $_POST['Tasks']["$id"]['deadline'];
       if (!empty($user_new_date)) {
         $task_id -> deadline = $user_new_date;
         $task_id -> save();

@@ -10,6 +10,7 @@ return [
       '@npm'   => '@vendor/npm-asset',
   ],
   'language' => 'en-US',
+  'layout' => 'basic',
   'components' => [
       'db' => $db,
       'mailer' => [
@@ -19,7 +20,14 @@ return [
           'basePath' => __DIR__ . '/../web/assets',
       ],
       'urlManager' => [
-          'showScriptName' => true,
+          'enablePrettyUrl' => true,
+          'showScriptName' => false,
+          'rules' => [
+            '' => '/todolist/index',
+            '<controller:w+>/<id:d+>' => '<controller>/view',
+            '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+            '<controller:w+>/<action:w+>' => '<controller>/<action>',
+          ],
       ],
       'user' => [
           'identityClass' => 'app\models\User',

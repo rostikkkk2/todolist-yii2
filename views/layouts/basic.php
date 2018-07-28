@@ -21,10 +21,10 @@ AppAsset::register($this);
         <div class="row">
           <div class="col-xs-12 header">
             <?php if (Yii::$app -> user -> isGuest): ?>
-              <a class="" href="/user/enter">Вход</a>
-              <a class="" href="/user/new">Регистрация</a>
+              <a class="" href="/user/enter">Enter</a>
+              <a class="" href="/user/new">Registration</a>
             <?php else: ?>
-              <a href="/user/logout">Выход</a>
+              <a href="/user/logout">Exit</a>
             <?php endif; ?>
           </div>
         </div>
