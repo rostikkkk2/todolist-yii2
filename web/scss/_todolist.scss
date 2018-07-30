@@ -73,9 +73,15 @@
   display: inline-block;
 }
 
+.btn-delete-todolist{
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+}
+
 .icon-drop {
   display: inline-block;
-  margin: 12px 0 0 4px;
 }
 
 .border-r {
@@ -84,8 +90,14 @@
   display: inline-block;
 }
 
+.block-btns-todo{
+  width: 111%;
+  margin-left: -10px;
+}
+
 .update-todo {
   color: black;
+  display: flex;
 }
 
 .todolist-title-input {

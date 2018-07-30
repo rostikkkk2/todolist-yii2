@@ -6,12 +6,12 @@ use yii\db\ActiveRecord;
 use app\models\Todolists;
 use Yii;
 
-class Tasks extends ActiveRecord{
-  public static function tableName(){
+class Tasks extends ActiveRecord {
+  public static function tableName() {
     return 'tasks';
   }
 
-  public function rules(){
+  public function rules() {
     return [
       [['title', 'todolist_id'], 'required'],
       [['is_completed', 'todolist_id'], 'integer'],
@@ -20,7 +20,7 @@ class Tasks extends ActiveRecord{
     ];
   }
 
-  public function attributeLabels(){
+  public function attributeLabels() {
     return [
       'id' => 'ID',
       'title' => 'Title',
@@ -29,7 +29,7 @@ class Tasks extends ActiveRecord{
     ];
   }
 
-  public function getTodolist(){
+  public function getTodolist() {
     return $this -> hasOne(Todolists::className(), ['id' => 'todolist_id']);
   }
 }

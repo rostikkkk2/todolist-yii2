@@ -70,7 +70,7 @@
 }
 
 .btns-task {
-  width: 121px;
+  width: 122px;
 }
 
 .btns-move-update-delete {
@@ -78,7 +78,7 @@
     display: inline-block;
   }
   form{
-    font-size: 0;
+    // margin-top: -17px;
   }
   .move-task-up, .move-task-down, .move-task-not-up {
     font-size: 13px;
@@ -107,11 +107,18 @@
     height: 13px;
   }
   .delete-task {
+    img {
+      width: 15px;
+      margin-left: -6px;
+      margin-bottom: 14px;
+    }
+    outline: none;
+    background: none;
+    border: none;
     width: 15px;
     margin-left: 6px;
-    margin-bottom: 15px;
   }
-  margin-left: -2px;
+  margin-left: -5px;
 }
 
 .input-group-addon[title="Очистить поле"] {
@@ -126,8 +133,8 @@
   border-radius: 4px;
 }
 
-.form-update-deadline{
-  .form-group{
+.form-update-deadline {
+  .form-group {
     display: inline-block;
     width: 74%;
     margin-top: 7px;
@@ -179,6 +186,10 @@
       width: 65%;
     }
   }
+  .btns-move-update-delete {
+    margin-left: 12px;
+    width: 116px;
+  }
 }
 
 @media(max-width: 500px) {
@@ -197,6 +208,9 @@
     width: 100%;
     margin-bottom: 0;
   }
+  .btns-move-update-delete {
+    margin-left: -2px;
+  }
 }
 
 @media(max-width: 425px) {
@@ -214,5 +228,8 @@
   .form-update-deadline .form-group {
     width: 113%;
     margin-bottom: 0;
+  }
+  .btns-move-update-delete {
+    margin-left: -9px;
   }
 }

@@ -9,7 +9,7 @@
  <div class="container">
    <div class="row">
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 logo-todolist">
-       <h1 class="">SIMPLE TODO LISTS<br></h1>
+       <h1>SIMPLE TODO LISTS<br></h1>
        <span>FROM RUBY GARAGE</span>
      </div>
    </div>
@@ -27,7 +27,11 @@
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 bloc-title-todo mt-10">
                           <span class="update-todo-title"><?= $todolist -> title ?></span>
                           <div class="hidden update-todo-input mt--2">
-                            <?php $update_todo = ActiveForm::begin(['action' => ['/todolist/update/' . $todolist -> id], 'enableClientValidation' => false, 'method' => 'post']); ?>
+                            <?php $update_todo = ActiveForm::begin([
+                              'action' => ['/todolist/update/' . $todolist -> id],
+                              'enableClientValidation' => false,
+                              'method' => 'put'
+                            ]); ?>
                             <?= $update_todo -> field($todolist, 'title') -> textInput(['class' => 'todolist-title-input', 'value' => $todolist -> title]) -> label(false); ?>
                             <?= Html::submitButton('', ['class' => 'glyphicon glyphicon-ok btn-submin-update']); ?>
                              <button class="glyphicon glyphicon-remove btn-remove-update" type="button"></button>
@@ -38,15 +42,21 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mt-2 icons-drop-update">
                           <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-hidden col-xs-hidden"></div>
-                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 block-btns-todo">
                               <div class="icon-update hidden">
-                                <img class="mb-6 update-todo" src="/web/images/icon-edit.png">
+                                <img class="update-todo" src="/web/images/icon-edit.png">
                               </div>
                               <div class="border-dr-ed hidden">
                                 <div class="border-r"></div>
                               </div>
                               <div class="icon-drop hidden">
-                                <a href="/todolist/delete/<?= $todolist -> id ?>"><img class="mb-6" src="/web/images/icon-drop.png"></a>
+                                <?php $delete_todo = ActiveForm::begin([
+                                  'action' => ['/todolist/delete/' . $todolist -> id],
+                                  'enableClientValidation' => false,
+                                  'method' => 'delete'
+                                ]); ?>
+                                <?= Html::submitButton(Html::img('/web/images/icon-drop.png'), ['class' => ' btn-delete-todolist']); ?>
+                                <?php $delete_todo = ActiveForm::end(); ?>
                               </div>
                             </div>
                           </div>
@@ -63,7 +73,11 @@
                           <img src="/web/images/green-plus.png">
                         </div>
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                          <?php $form_task = ActiveForm::begin(['action' => ['/task/create'], 'enableClientValidation' => false, 'method' => 'post']); ?>
+                          <?php $form_task = ActiveForm::begin([
+                            'action' => ['/task/create'],
+                            'enableClientValidation' => false,
+                            'method' => 'post'
+                          ]); ?>
                             <?= $form_task -> field($model, 'title') -> textInput(['class'=> 'form-control bs', 'autocomplete' => "off", 'placeholder' => "Start typing here to create a task..."]) -> label(false); ?>
                             <?= $form_task -> field($todolist, 'id') -> hiddenInput() -> label(false); ?>
                             <span class="input-group-btn">
@@ -79,7 +93,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     <?php endforeach; ?>

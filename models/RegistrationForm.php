@@ -10,7 +10,7 @@
     public $password;
     public $confirm_password;
 
-    public function rules(){
+    public function rules() {
       return [
         ['email', 'email'],
         [['password','email','confirm_password'], 'required'],
@@ -20,7 +20,7 @@
       ];
     }
 
-    public function registrate(){
+    public function registrate() {
       if ($this -> validate()) {
         $user = new User;
         $user -> email = $this -> email;

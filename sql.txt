@@ -7,7 +7,7 @@ Given tables:
 
 - get all statuses, not repeating, alphabetically ordered.
 
-    SELECT status FROM tasks ORDER BY status DESC
+    SELECT DISTINCT status FROM tasks ORDER BY status DESC
 
 - get the count of all tasks in each project, order by tasks count descending.
 
@@ -15,7 +15,7 @@ Given tables:
 
 - get the count of all tasks in each project, order by projects names.
 
-    SELECT COUNT(tasks.name) FROM tasks INNER JOIN projects ON tasks.project_id=projects.id GROUP BY projects.name DESC
+    SELECT COUNT(tasks.name) FROM tasks INNER JOIN projects ON tasks.project_id = projects.id GROUP BY projects.name DESC
 
 - get the tasks for all projects having the name beginning with "N" letter.
 
@@ -25,15 +25,17 @@ Given tables:
   and show the tasks count near each project. Mention that there can exist projects without tasks and tasks
   with project_id = NULL.
 
-
+    SELECT projects.name, COUNT(tasks.id) FROM projects LEFT JOIN tasks ON projects.id = tasks.project_id WHERE projects.name LIKE '%a%' GROUP BY projects.name
 
 - get the list of tasks with duplicate names. Order alphabetically.
 
     SELECT name FROM tasks GROUP BY name HAVING count(*) > 1
 
 - get list of tasks having several exact matches of both name and status, from the project 'Garage'.
-  Order by matches count
+  Order by matches count.
 
-
+    SELECT tasks.name, tasks.status, COUNT(tasks.name) FROM tasks INNER JOIN projects ON tasks.project_id = projects.id WHERE projects.name = 'garage' GROUP BY tasks.name, tasks.status HAVING COUNT(*) > 1
 
 - get the list of project names having more then 10 tasks in status 'completed'. Order by project_id.
+
+     SELECT projects.name, COUNT(tasks.status) AS count_status FROM projects INNER JOIN tasks ON projects.id=tasks.project_id WHERE tasks.status = 'completed' GROUP BY projects.id HAVING count_status >= 10 ORDER BY projects.id DESC

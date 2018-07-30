@@ -11,38 +11,28 @@ use yii\models\Todolists;
 use Yii;
 
 class UserController extends Controller {
-  public function behaviors(){
-      return [
-          'access' => [
-              'class' => AccessControl::className(),
-              'only' => ['logout','new','enter','create','signin'],
-              'rules' => [
-                  [
-                      'allow' => true,
-                      'actions' => ['new','enter','create','signin'],
-                      'roles' => ['?'],
-                  ],
-                  [
-                    'allow' => true,
-                    'actions' => ['logout'],
-                    'roles' => ['@'],
-                  ],
-              ],
-          ],
-        ];
+  public function behaviors() {
+    return [
+        'access' => [
+            'class' => AccessControl::className(),
+            'only' => ['logout','new','enter','create','signin'],
+            'rules' => [
+                [
+                  'allow' => true,
+                  'actions' => ['new','enter','create','signin'],
+                  'roles' => ['?'],
+                ],
+                [
+                  'allow' => true,
+                  'actions' => ['logout'],
+                  'roles' => ['@'],
+                ],
+            ],
+        ],
+      ];
   }
 
-  public function actionEnter(){
-    $model = new LoginForm();
-    return $this -> render('enter', compact('model'));
-  }
-
-  public function actionNew(){
-    $model = new RegistrationForm();
-    return $this -> render('new', compact('model'));
-  }
-
-  public function actionCreate(){
+  public function actionCreate() {
     $model = new RegistrationForm();
     $model -> load(Yii::$app -> request -> post());
     if ($model -> registrate()) {
@@ -51,15 +41,24 @@ class UserController extends Controller {
     }
   }
 
-  public function actionLogout(){
+  public function actionEnter() {
+    $model = new LoginForm();
+    return $this -> render('enter', compact('model'));
+  }
+
+  public function actionNew() {
+    $model = new RegistrationForm();
+    return $this -> render('new', compact('model'));
+  }
+
+  public function actionLogout() {
     Yii::$app -> user -> logout();
     return $this -> goHome();
   }
 
-  public function actionSignin(){
+  public function actionSignin() {
     $model = new LoginForm();
     $model -> load(Yii::$app -> request -> post());
-
     if ($model -> login()) {
       return $this -> redirect(['todolist/index']);
     }else {
@@ -68,4 +67,4 @@ class UserController extends Controller {
     }
   }
 
-  }
+}

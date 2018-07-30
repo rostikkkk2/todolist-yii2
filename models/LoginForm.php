@@ -1,16 +1,16 @@
-<?php
+ <?php
 
 namespace app\models;
 
 use Yii;
 use yii\base\Model;
 
-class LoginForm extends Model{
+class LoginForm extends Model {
   public $email;
   public $password;
   public $rememberMe = true;
 
-  public function rules(){
+  public function rules() {
     return [
       [['email', 'password'], 'required'],
       ['email', 'email'],
@@ -19,7 +19,7 @@ class LoginForm extends Model{
     ];
   }
 
-  public function validatePassword($attribute, $params){
+  public function validatePassword($attribute, $params) {
     if (!$this -> hasErrors()) {
       $user = User::findByEmail($this -> email);
       if (!$user || !$user -> validatePassword($this->password)) {
@@ -35,7 +35,7 @@ class LoginForm extends Model{
     }
   }
 
-  public function getUser(){
+  public function getUser() {
     if ($this -> _user === false) {
         $this -> _user = User::findByUsername($this -> username);
     }

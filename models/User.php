@@ -7,7 +7,7 @@ use yii\web\IdentityInterface;
 use Yii;
 
 class User extends ActiveRecord implements IdentityInterface {
-  public static function tableName(){
+  public static function tableName() {
     return 'users';
   }
 

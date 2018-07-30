@@ -14,17 +14,17 @@ AppAsset::register($this);
     <title>Document</title>
     <?php $this -> head(); ?>
   </head>
-  <body class="">
+  <body>
     <?php $this -> beginBody(); ?>
     <header>
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 header">
             <?php if (Yii::$app -> user -> isGuest): ?>
-              <a class="" href="/user/enter">Enter</a>
-              <a class="" href="/user/new">Registration</a>
+              <a href="/user/enter">Enter</a>
+              <a href="/user/new">Registration</a>
             <?php else: ?>
-              <a href="/user/logout">Exit</a>
+              <a href="/user/logout">Logout</a>
             <?php endif; ?>
           </div>
         </div>

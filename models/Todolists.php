@@ -6,12 +6,12 @@ use yii\db\ActiveRecord;
 use app\models\User;
 use Yii;
 
-class Todolists extends ActiveRecord{
-    public static function tableName(){
+class Todolists extends ActiveRecord {
+    public static function tableName() {
         return 'todolists';
     }
 
-    public function rules(){
+    public function rules() {
       return [
         [['user_id', 'title'], 'required'],
         [['user_id'], 'integer'],
@@ -20,7 +20,7 @@ class Todolists extends ActiveRecord{
       ];
     }
 
-    public function attributeLabels(){
+    public function attributeLabels() {
       return [
         'id' => 'ID',
         'title' => 'Title',
@@ -28,7 +28,7 @@ class Todolists extends ActiveRecord{
       ];
     }
 
-    public function getTasks(){
+    public function getTasks() {
       return $this -> hasMany(Tasks::className(), ['todolist_id' => 'id']) -> orderBy('position');
     }
 
