@@ -18,7 +18,7 @@ AppAsset::register($this);
     <?php $this -> beginBody(); ?>
     <header>
       <div class="container-fluid">
-        <div class="row">
+        <div class="row text-right">
           <div class="col-xs-12 header">
             <?php if (Yii::$app -> user -> isGuest): ?>
               <a href="/user/enter">Enter</a>

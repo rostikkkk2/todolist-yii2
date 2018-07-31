@@ -3,6 +3,12 @@
   overflow: hidden;
 }
 
+.block-not-empty-task{
+  padding-top: 9px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .all-task {
   &:hover {
     .btns-move-update-delete {
@@ -13,7 +19,7 @@
   }
   background-color: white;
   width: 100%;
-  min-height: 48px;
+  min-height: 50px;
   border-bottom: 1px solid #e6e6e6;
 }
 .deadline-over {
@@ -76,9 +82,6 @@
 .btns-move-update-delete {
   div{
     display: inline-block;
-  }
-  form{
-    // margin-top: -17px;
   }
   .move-task-up, .move-task-down, .move-task-not-up {
     font-size: 13px;
@@ -211,6 +214,9 @@
   .btns-move-update-delete {
     margin-left: -2px;
   }
+  .checkbox-done input {
+    margin: 15px 0 0 10px;
+  }
 }
 
 @media(max-width: 425px) {
@@ -231,5 +237,8 @@
   }
   .btns-move-update-delete {
     margin-left: -9px;
+  }
+  .checkbox-done input {
+    margin: 15px 0 0 16px;
   }
 }

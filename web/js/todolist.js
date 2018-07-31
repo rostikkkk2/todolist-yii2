@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
-  $('.update-todo').click(function() {
+  $('.update-todo').click(function(){
     var todo_row = $(this).parents('.title');
     $(todo_row).find('.update-todo-title').addClass('hidden');
     $(todo_row).find('.update-todo-input').removeClass('hidden');
     $(todo_row).find('.update-todo').addClass('hidden');
     $(todo_row).find('.border-r').addClass('hidden');
     $(todo_row).find('.btn-delete-todolist').css('margin-top', '10px');
-  })
+  });
 
   $('.btn-send-update').click(function() {
     $('.update-todo').removeClass('hidden');
