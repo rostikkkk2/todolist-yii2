@@ -1,0 +1,30 @@
+{
+  "name": "todolist-yii.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "scss-compile": "node-sass -rw web/scss -o web/css",
+    "watch": "npm run scss-compile",
+    "lint-scss": "sass-lint 'app/assets/stylesheets/scss/*.scss' -v -q",
+    "lint-js": "jslint scripts/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "sass-lint": "^1.12.1"
+  },
+  "devDependencies": {
+    "html-lint": "^2.4.1",
+    "jslint": "^0.12.0",
+    "node-sass": "^4.9.0",
+    "sass-lint": "^1.12.1",
+    "scss-compile": "^0.1.7"
+  }
+}

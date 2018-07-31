@@ -1,0 +1,164 @@
+.all-todolist {
+  min-height: 90px;
+  margin-top: 60px;
+}
+
+.title {
+  &:hover {
+    .icons-drop-update .icon-update, .icon-drop, .border-dr-ed  {
+      display: inline-block !important;
+      cursor: pointer;
+    }
+  }
+  .img-nodelist {
+    margin: 9px 6px 0 11px;
+    color: #484848;
+  }
+  span {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+  }
+  height: 48px;
+  background: linear-gradient(to bottom, #6f95c3 0%, #103a7d 100%);
+  border: 1px solid #2e548a;
+  border-radius: 2px 2px 0 0;
+}
+
+
+.input-task {
+  img {
+    color: green;
+    margin: 10px 9px 0 13px;
+  }
+  .field-tasks-title {
+    width: 79%;
+    margin-bottom: -15px;
+    display: inline-block;
+  }
+  .field-todolists-id {
+    display: inline-block;
+  }
+  .input-group-btn {
+    display: inline-block;
+  }
+  .btn-add-task {
+    margin-top: -3px;
+    font-size: 14px;
+    margin-left: -13px;
+    outline: none;
+    height: 28px;
+    background: linear-gradient(#91f5c0  0%, #4b9a6d 77%);
+    color: white;
+    border: 1px solid #3c6f50;
+    border-radius: 0 5px 5px 0;
+    width: 110px !important;
+  }
+  input {
+    margin-top: 7px;
+    height: 30px;
+    margin-left: -6px;
+    outline: none;
+    border-radius: 0px;
+  }
+  .bs {
+    box-shadow: inset 0 1px 0 0 rgba(0,0,0,0.75);
+  }
+  height: 48px;
+  background-color: #cec7c7;
+}
+
+.icon-update {
+  margin: 12px 4px 0 0;
+  display: inline-block;
+}
+
+.btn-delete-todolist{
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+}
+
+.icon-drop {
+  display: inline-block;
+}
+
+.border-r {
+  border-right: 1px solid #989393;
+  height: 16px;
+  display: inline-block;
+}
+
+.block-btns-todo{
+  width: 111%;
+  margin-left: -10px;
+}
+
+.update-todo {
+  color: black;
+  display: flex;
+}
+
+.todolist-title-input {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 28px;
+}
+
+.field-todolists-title {
+  margin-bottom: -3px;
+  display: inline-block;
+}
+
+.btn-submin-update, .btn-remove-update {
+  height: 21px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 30px;
+}
+
+@media(max-width: 600px) {
+  .input-task .field-tasks-title {
+    width: 70%;
+  }
+}
+
+@media(max-width: 530px) {
+  .input-task .field-tasks-title{
+    width: 60%;
+    margin-left: 17px;
+  }
+}
+
+@media(max-width: 490px) {
+  .icon-update {
+    margin-left: -25px;
+  }
+  .todolist-title-input {
+    margin-left: 15px;
+    width: 120px;
+  }
+  .update-todo-title {
+    margin-left: 15px;
+  }
+}
+
+@media(max-width: 370px) {
+  .title .img-nodelist {
+    margin-left: 4px;
+  }
+  .icon-update {
+    margin-left: -28px;
+  }
+  .bloc-title-todo {
+    margin-right: -10px;
+  }
+  .input-task .field-tasks-title {
+    width: 50%;
+  }
+  .left-xs-med-img {
+    margin-left: -8px;
+  }
+}

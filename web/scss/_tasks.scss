@@ -1,0 +1,244 @@
+.tasks-bord-rad {
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+
+.block-not-empty-task{
+  padding-top: 9px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.all-task {
+  &:hover {
+    .btns-move-update-delete {
+      display: inline-block !important;
+      cursor: pointer;
+    }
+    background-color: #ffffa2;
+  }
+  background-color: white;
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.deadline-over {
+  background-color: #ff7272;
+}
+.vert-borders-l {
+  .text-task {
+    float: left;
+  }
+  text-align: right;
+  float: left;
+  min-height: 48px;
+  border-left: 1px solid #ffcaff;
+}
+
+.middle-row-text {
+  width: 71%;
+}
+
+.vert-border-r {
+  min-height: 48px;
+  border-right: 1px solid #e6e6e6;
+  display: inline-block;
+}
+
+.text-task {
+  .title-task {
+    display: block;
+    margin: 12px 0px 0px -6px;
+  }
+  display: inline-block;
+  color: #8a8a8a;
+  font-weight: bold;
+  font-size: 16px;
+  width: 67%;
+  text-align: left;
+  word-break: break-word;
+}
+
+.deadline-text {
+  margin-top: 13px;
+  display: inline-block;
+  margin-right: 11px;
+  font-size: 13px;
+}
+
+.checkbox-done {
+  input{
+    margin: 15px 0 0 15px;
+    transform: scale(1.2);
+    opacity: 0.9;
+    cursor: pointer;
+  }
+}
+
+.btns-task {
+  width: 122px;
+}
+
+.btns-move-update-delete {
+  div{
+    display: inline-block;
+  }
+  .move-task-up, .move-task-down, .move-task-not-up {
+    font-size: 13px;
+    color: #8e8d8d;
+    margin-right: 4px;
+    display: block;
+    border: none;
+    background: none;
+    padding-right: 4px;
+    outline: none;
+  }
+  .task-border-r {
+    border-right: 1px solid #ccc8c8;
+    height: 13px;
+    margin-bottom: 6px;
+  }
+  .update-task {
+    width: 15px;
+    margin-left: 7px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+  }
+  .task-border-l {
+    margin-bottom: 6px;
+    border-left: 1px solid #ccc8c8;
+    height: 13px;
+  }
+  .delete-task {
+    img {
+      width: 15px;
+      margin-left: -6px;
+      margin-bottom: 14px;
+    }
+    outline: none;
+    background: none;
+    border: none;
+    width: 15px;
+    margin-left: 6px;
+  }
+  margin-left: -5px;
+}
+
+.input-group-addon[title="Очистить поле"] {
+    display: none;
+}
+
+.input-task-update {
+  margin-top: -1px;
+  display: inline-block;
+  width: 99%;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.form-update-deadline {
+  .form-group {
+    display: inline-block;
+    width: 74%;
+    margin-top: 7px;
+    margin-bottom: -21px;
+  }
+}
+
+.update-form-task {
+  .field-tasks-title {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  margin-top: 11px;
+}
+
+.btn-update-task, .btn-remove-update-task {
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.task-done-cross {
+  text-decoration: line-through;
+}
+
+.update-datetime-deadline {
+  width: 110%;
+}
+
+.field-tasks-deadline {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.btn-update-deadline, .btn-cancel-update-deadline {
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+@media(max-width: 600px) {
+  .middle-row-text {
+    width: 62%;
+  }
+  .btns-move-update-delete {
+    margin-left: 2px;
+  }
+  .form-update-deadline{
+    .form-group{
+      width: 65%;
+    }
+  }
+  .btns-move-update-delete {
+    margin-left: 12px;
+    width: 116px;
+  }
+}
+
+@media(max-width: 500px) {
+  .input-task-update {
+    width: 98%;
+  }
+  .field-tasks-title {
+    width: 155px;
+    text-align: left;
+  }
+  .field-tasks-deadline {
+    display: block;
+    width: 143%;
+  }
+  .form-update-deadline .form-group {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .btns-move-update-delete {
+    margin-left: -2px;
+  }
+  .checkbox-done input {
+    margin: 15px 0 0 10px;
+  }
+}
+
+@media(max-width: 425px) {
+  .field-tasks-title {
+    width: 100px;
+    text-align: left;
+  }
+  .checkbox-done {
+    padding-left: 5px;
+  }
+  .middle-row-text {
+    width: 50%;
+    margin-left: 10px;
+  }
+  .form-update-deadline .form-group {
+    width: 113%;
+    margin-bottom: 0;
+  }
+  .btns-move-update-delete {
+    margin-left: -9px;
+  }
+  .checkbox-done input {
+    margin: 15px 0 0 16px;
+  }
+}
