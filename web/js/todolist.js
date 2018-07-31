@@ -93,4 +93,9 @@ $(document).ready(function() {
     $(this).submit();
   });
 
+  $('.btn-add-task').click(function() {
+    $('.btn-add-task').attr('disabled', 'true');
+    $(this).submit();
+  });
+
 })
